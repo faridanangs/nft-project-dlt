@@ -12,7 +12,7 @@ app.use(cors());
 app.options("*", cors());
 
 // routes
-app.use("/api/v0/nfts", nftRouter)
-app.use("/api/v0/user", userRouter)
+app.use("/api/v1/nfts", nftRouter)
+app.use("/api/v1/user", userRouter)
 
 module.exports = app;

@@ -4,7 +4,7 @@ pragma solidity ^0.8.9;
 contract nftsIPFS {
     address payable contractOwner =
         payable(0xcaB108CA64Fa6860750a4418A5b7c7B86288d6fe);
-    uint256 public listingPrice = 0.025 ether;
+    uint256 public listingPrice = 0.0000000025 ether;
 
     struct NFTs {
         string title;
@@ -94,5 +94,37 @@ contract nftsIPFS {
             nft.timestamp,
             nft.id
         );
+    }
+
+    // update lsiting price
+    function updateListingPrice(
+        uint256 _listingPrice,
+        address owner
+    ) public payable {
+        require(
+            contractOwner == owner,
+            "Only owner can update the listing price"
+        );
+
+        listingPrice = _listingPrice;
+    }
+
+    // donate
+    function donateToImage(uint256 _id) public payable {
+        uint256 amount = msg.value;
+
+        NFTs storage nft = nftImages[_id];
+        (bool send, ) = payable(nft.creator).call{value: amount}("");
+        if (send) {
+            nft.fundraised = amount + nft.fundraised;
+        }
+    }
+
+    function withdraw(address _owner) external{
+        require(_owner == contractOwner, "Only owner can withdraw");
+        uint256 balance = address(this).balance;
+        require(balance > 0, "no fund available");
+
+        contractOwner.transfer(balance);
     }
 }
