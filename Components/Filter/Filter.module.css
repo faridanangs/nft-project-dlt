@@ -1,0 +1,72 @@
+.Filter {
+  margin-block: 2rem;
+  grid-template-columns: 3fr 1fr;
+  display: grid;
+  gap: 2rem;
+}
+
+.Filter_box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: #2222;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.Filter_box input {
+  width: 100%;
+  background: #2222;
+  outline: none;
+  border: 0;
+  color: white;
+}
+
+.filter {
+  position: relative;
+  padding: 1rem 0;
+  background: #2222;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.filter_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.filter_box {
+  position: absolute;
+  width: 85%;
+  background: #2222;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  z-index: 1111;
+}
+
+
+.filter_box p {
+    cursor: pointer;
+}
+
+@media screen and(max-width: 800px) {
+    .Filter{
+        grid-template-columns: 2fr 1fr;
+    }
+}
+@media screen and(max-width: 600px) {
+    .Filter{
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
+@media screen and(max-width: 400px) {
+    .Filter{
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+}
