@@ -11,9 +11,6 @@ Build your first web3 API start-up, in which you can provide users to upload the
 
 Kindly follow the following Instructions to run the project in your system and install the necessary requirements
 
-
-- [Final Source Code](https://www.theblockchaincoders.com/sourceCode/nfts-api-ipfs-web3-start-up-provider)
-
 #### Install Vs Code Editor
 
 ```https://code.visualstudio.com/download
