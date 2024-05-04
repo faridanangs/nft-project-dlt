@@ -22,7 +22,8 @@ const Product = ({
   return (
     <div className={style.Product}>
       <div className={style.image}>
-        <img className={style.image_img} src={image?.imageURL} alt="IMAGE" />
+        {/* <img className={style.image_img} src={image?.imageURL} alt="IMAGE" /> */}
+        <Image className={style.image_img} src={images.img1} alt="image" width={200} height={200} />
       </div>
       <div className={style.detail}>
         <div className={style.detail_box}>
