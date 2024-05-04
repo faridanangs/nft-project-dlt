@@ -4,7 +4,7 @@ import { FormSVG, Lock } from "../SVG";
 import axios from "axios";
 import { Notification } from "../index";
 
-const Login = (setLogin, setSignup, notification, setNotification) => {
+const Login = ({setLogin, setSignup, notification, setNotification}) => {
   // api login
   const [user, setUser] = useState({
     email: "",
@@ -97,7 +97,7 @@ const Login = (setLogin, setSignup, notification, setNotification) => {
       {notification != "" && (
         <Notification
           notification={notification}
-          setNotofication={setNotification}
+          setNotification={setNotification}
         />
       )}
     </>

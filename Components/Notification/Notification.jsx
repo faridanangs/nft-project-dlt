@@ -2,9 +2,9 @@ import React from "react";
 import style from "./Notification.module.css";
 import { IoIosNotifications } from "react-icons/io";
 
-const Notification = ({ setNotofication, notification }) => {
+const Notification = ({ setNotification, notification }) => {
   return (
-    <div onClick={() => setNotofication("")} className={style.alert}>
+    <div onClick={() => setNotification("")} className={style.alert}>
       {notification}
       <span>&times;</span>
     </div>
