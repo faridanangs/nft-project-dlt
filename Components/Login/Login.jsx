@@ -11,8 +11,8 @@ const Login = ({setLogin, setSignup, notification, setNotification}) => {
     password: "",
   });
 
-  const handleFormFileChange = (filedName, e) => {
-    setUser({ ...user, [filedName]: e.target.value });
+  const handleFormFileChange = (fieldName, e) => {
+    setUser({ ...user, [fieldName]: e.target.value });
   };
 
   const apiLogin = async (e) => {
@@ -25,7 +25,7 @@ const Login = ({setLogin, setSignup, notification, setNotification}) => {
     try {
       const response = await axios({
         method: "POST",
-        url: "/api/v1/users/login",
+        url: "http://localhost:3000/api/v1/user/login",
         withCredentials: true,
         data: {
           email: user.email,

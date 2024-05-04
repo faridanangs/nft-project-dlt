@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import style from "./Card.module.css";
 import images from "../Image/index";
-import nftImage from "../Image/1.jpg"
+import nftImage from "../Image/1.jpg";
 
 const Card = ({ setNotification, image, index }) => {
   return (
@@ -26,16 +26,15 @@ const Card = ({ setNotification, image, index }) => {
             className="avatar_img"
             // src={images[`client${index + 1}`]}
             src={nftImage}
-
+            alt="avatar"
             width={40}
             height={40}
           />
           <small
             className={style.para_small}
             onClick={
-              (() => setNotification("Successfully copied")
+              () => setNotification("Successfully copied")
               // navigator.clipboard.writeText(image?.owner)
-            )
             }
           >
             {image?.owner.slice(0, 25)}...
@@ -50,9 +49,8 @@ const Card = ({ setNotification, image, index }) => {
         </small>
         <button
           onClick={
-            (() => setNotification("Image url is successfully copied")
+            () => setNotification("Image url is successfully copied")
             // navigator.clipboard.writeText(image?.image)
-          )
           }
           className={style.btn}
         >

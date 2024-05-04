@@ -29,7 +29,7 @@
 
 .header p {
   text-align: center;
-  color: rgba(199, 199, 199, 0.924);
+  color: rgba(0, 0, 0, 0.206);
 }
 
 .footer {
@@ -42,7 +42,7 @@
   display: flex;
   align-content: center;
   justify-content: flex-end;
-  color: rgb(232, 216, 216);
+  color: black;
   border: none;
 }
 

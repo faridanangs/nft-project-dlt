@@ -6,7 +6,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 const StateContext = createContext()
 
 export const StateContextProvider = ({ children }) => {
-    const { contract } = useContract("0xaF80924f173F6D4FaB397d12FED636Bf0B376F6C");
+    // const { contract } = useContract("0xaF80924f173F6D4FaB397d12FED636Bf0B376F6C");
 
     const address = useAddress();
     const connect = useMetamask();
@@ -38,14 +38,18 @@ export const StateContextProvider = ({ children }) => {
         const { title, description, category, image } = imageInfo;
 
         try {
+            const contract = new ethers.providers.JsonRpcProvider("")
+
             // charge
             const listingPrice = await contract.call("listingPrice");
+            console.log(listingPrice, "price list");
             const createNft = await contract.call("uploadIPFS", [address, image, title, description, category], { value: listingPrice?.toString() });
+            console.log(createNft, "create nfts");
 
             // api call
             const response = await axios({
                 method: "POST",
-                url: "/api/v1/nfts",
+                url: "http://localhost:3000/api/v1/nfts",
                 data: {
                     title: title,
                     description: description,
@@ -55,7 +59,7 @@ export const StateContextProvider = ({ children }) => {
                 }
             })
             console.log(response, "response");
-            console.info("Contract call success", createNft)
+            console.log("Contract call success", createNft)
 
             setloading(false);
             window.location.reload();

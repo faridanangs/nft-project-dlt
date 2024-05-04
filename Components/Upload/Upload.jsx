@@ -3,7 +3,7 @@ import style from "./Upload.module.css";
 import Image from "next/image";
 import { Delete, UploadIcon, File } from "../SVG/index";
 
-const Upload = ({ onImageChange, display, retrieveFile }) => {
+const Upload = ({ onImageChange, display, retrieveFile, address }) => {
   return (
     <div className={style.container}>
       <div className={style.header}>

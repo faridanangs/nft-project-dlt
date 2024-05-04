@@ -70,7 +70,7 @@ const Filter = ({
   return (
     <div className={style.Filter}>
       <div className={style.Filter_box}>
-        <Image src={images.search} width={20} height={20} />
+        <Image src={images.search} width={20} height={20} alt="search" />
         <input
           type="text"
           placeholder="Search address"
@@ -84,7 +84,7 @@ const Filter = ({
       >
         <div className={style.filter_title}>
           <h4>{activeSelect}</h4>
-          <Image src={images.arrow} width={10} height={10} />
+          <Image src={images.arrow} width={10} height={10} alt="arrow"/>
         </div>
         {toggle && (
           <div className={style.filter_box}>
